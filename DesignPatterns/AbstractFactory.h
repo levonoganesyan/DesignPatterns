@@ -92,6 +92,8 @@ void ApplicationConfig() // start of program
         factory = new OldFactory;
     else
         factory = new ModernFactory;
+    Application app(factory);
+    // some work with app
 }
 
 
