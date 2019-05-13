@@ -23,5 +23,8 @@
     <ClInclude Include="Adapter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Flyweight.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
