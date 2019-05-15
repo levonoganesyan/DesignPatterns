@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Proxy.h"
+#include "Visitor.h"
 int main()
 {
     Test();
