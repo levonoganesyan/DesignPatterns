@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Visitor.h"
+#include "Observer.h"
 int main()
 {
     Test();
