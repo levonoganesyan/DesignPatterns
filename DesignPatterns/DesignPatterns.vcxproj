@@ -157,6 +157,7 @@
     <ClInclude Include="Decorator.h" />
     <ClInclude Include="Facade.h" />
     <ClInclude Include="Prototype.h" />
+    <ClInclude Include="Proxy.h" />
     <ClInclude Include="Singleton.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

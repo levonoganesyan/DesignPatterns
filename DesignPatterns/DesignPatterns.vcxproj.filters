@@ -44,5 +44,8 @@
     <ClInclude Include="Facade.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Proxy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
