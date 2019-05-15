@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Singleton.h"
+#include "Decorator.h"
 int main()
 {
     Test();
