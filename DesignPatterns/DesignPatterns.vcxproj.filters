@@ -35,5 +35,8 @@
     <ClInclude Include="Prototype.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Composite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
