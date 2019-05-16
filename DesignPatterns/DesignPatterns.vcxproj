@@ -150,6 +150,7 @@
     <ClCompile Include="DesignPatterns.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AbstractFactory.h" />
     <ClInclude Include="Adapter.h" />
     <ClInclude Include="Bridge.h" />
     <ClInclude Include="Builder.h" />
