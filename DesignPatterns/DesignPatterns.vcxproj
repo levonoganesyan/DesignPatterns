@@ -150,10 +150,17 @@
     <ClCompile Include="DesignPatterns.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AbstractFactory.h" />
     <ClInclude Include="Adapter.h" />
-    <ClInclude Include="FactoryMethod.h" />
-    <ClInclude Include="Flyweight.h" />
+    <ClInclude Include="Bridge.h" />
+    <ClInclude Include="Builder.h" />
+    <ClInclude Include="Composite.h" />
+    <ClInclude Include="Decorator.h" />
+    <ClInclude Include="Facade.h" />
+    <ClInclude Include="Observer.h" />
+    <ClInclude Include="Prototype.h" />
+    <ClInclude Include="Proxy.h" />
+    <ClInclude Include="Singleton.h" />
+    <ClInclude Include="Visitor.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

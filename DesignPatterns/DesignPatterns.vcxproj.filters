@@ -23,13 +23,34 @@
     <ClInclude Include="Adapter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Flyweight.h">
+    <ClInclude Include="Builder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FactoryMethod.h">
+    <ClInclude Include="Bridge.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="AbstractFactory.h">
+    <ClInclude Include="Singleton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Composite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Decorator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Facade.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Proxy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Visitor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Observer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
