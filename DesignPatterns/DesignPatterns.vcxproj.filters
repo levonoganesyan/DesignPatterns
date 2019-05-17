@@ -23,12 +23,6 @@
     <ClInclude Include="Adapter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Flyweight.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FactoryMethod.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="AbstractFactory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -60,6 +54,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Observer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FactoryMethod.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Flyweight.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -157,6 +157,8 @@
     <ClInclude Include="Composite.h" />
     <ClInclude Include="Decorator.h" />
     <ClInclude Include="Facade.h" />
+    <ClInclude Include="FactoryMethod.h" />
+    <ClInclude Include="Flyweight.h" />
     <ClInclude Include="Observer.h" />
     <ClInclude Include="Prototype.h" />
     <ClInclude Include="Proxy.h" />
