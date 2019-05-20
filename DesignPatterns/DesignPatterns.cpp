@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Observer.h"
+#include "Strategy.h"
 int main()
 {
     Test();

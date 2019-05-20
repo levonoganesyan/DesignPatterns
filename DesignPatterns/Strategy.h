@@ -1,6 +1,7 @@
 #pragma once
 
 #include<functional>
+#include<string>
 
 template <typename T>
 class Operation
@@ -32,4 +33,26 @@ int multiply(int a, int b)
     return a * b;
 }
 
+
+void Test()
+{
+    std::string operation = "plus";
+    int a = 10, b = 5;
+    Operation<int> op;
+    if (operation == "plus")
+    {
+        op.setMethod(plus);
+    }
+    else if (operation == "minus")
+    {
+        op.setMethod(minus);
+    }
+    else if (operation == "multiply")
+    {
+        op.setMethod(multiply);
+    }
+
+    std::cout << op.Execute(a, b);
+
+}
 
