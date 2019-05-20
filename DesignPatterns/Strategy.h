@@ -3,56 +3,76 @@
 #include<functional>
 #include<string>
 
-template <typename T>
+
 class Operation
 {
-    std::function<T(const T&, const T&)> m_method;
 public:
-    void setMethod(const std::function<T(const T&, const T&)>& method)
+    virtual int execute(int a, int b) = 0;
+};
+
+
+class Plus : public Operation
+{
+public:
+    virtual int execute(int a, int b)
     {
-        m_method = method;
-    }
-    T Execute(const T& a, const T& b)
-    {
-        return m_method(a, b);
+        return a + b;
     }
 };
 
-int plus(int a, int b)
+class Minus : public Operation
 {
-    return a + b;
-}
+public:
+    virtual int execute(int a, int b)
+    {
+        return a - b;
+    }
+};
 
-int minus(int a, int b)
+class Multiply : public Operation
 {
-    return a - b;
-}
+public:
+    virtual int execute(int a, int b)
+    {
+        return a * b;
+    }
+};
 
-int multiply(int a, int b)
+
+class Expression
 {
-    return a * b;
-}
+    Operation* m_op;
+public:
+    void setMethod(Operation* op)
+    {
+        m_op = op;
+    }
+    int execute(int a, int b)
+    {
+        return m_op->execute(a, b);
+    }
+};
+
 
 
 void Test()
 {
     std::string operation = "plus";
     int a = 10, b = 5;
-    Operation<int> op;
+    Expression* expr = new Expression;
     if (operation == "plus")
     {
-        op.setMethod(plus);
+        expr->setMethod(new Plus);
     }
     else if (operation == "minus")
     {
-        op.setMethod(minus);
+        expr->setMethod(new Minus);
     }
     else if (operation == "multiply")
     {
-        op.setMethod(multiply);
+        expr->setMethod(new Multiply);
     }
-
-    std::cout << op.Execute(a, b);
+    std::cout << expr->execute(a, b);
 
 }
 
