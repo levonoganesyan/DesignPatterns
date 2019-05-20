@@ -68,5 +68,8 @@
     <ClInclude Include="Flyweight.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Memento.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
