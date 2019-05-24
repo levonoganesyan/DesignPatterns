@@ -12,6 +12,7 @@ public:
     void ReplaceSelection(const std::string& text) { /* ... */ }
 };
 
+class CommandHistory;
 class Command;
 
 class Application
@@ -20,10 +21,10 @@ public:
     std::string m_clipboard;
     std::vector<Editor> m_editors;
     Editor m_active_editor;
-    Command* m_command_history;
+    CommandHistory* m_command_history;
 
     void CreateUI();
-    void ExecuteCommand();
+    void ExecuteCommand(std::shared_ptr<Command> c);
     void Undo();
 };
 
@@ -100,11 +101,62 @@ public:
     }
     std::shared_ptr<Command> pop()
     {
+        if (commands.empty())
+        {
+            return std::shared_ptr<Command>(nullptr);
+        }
         std::shared_ptr<Command> c = commands.back();
         commands.pop_back();
         return c;
     }
 };
 
+
+void Application::CreateUI()
+{
+    // ...
+    /*
+    copy = []() {
+        executeCommand(new CopyCommand(this, activeEditor));
+    };
+    copyButton.setCommand(copy);
+    shortcuts.onKeyPress("Ctrl+C", copy)
+
+
+
+    cut = []() {
+        executeCommand(new CutCommand(this, activeEditor));
+    };
+    cutButton.setCommand(cut);
+    shortcuts.onKeyPress("Ctrl+X", cut);
+
+
+
+    paste = []() {
+        executeCommand(new PasteCommand(this, activeEditor));
+    };
+    pasteButton.setCommand(paste);
+    shortcuts.onKeyPress("Ctrl+V", paste);
+
+    undo = []() {
+        executeCommand(new UndoCommand(this, activeEditor));
+    };
+    undoButton.setCommand(undo);
+    shortcuts.onKeyPress("Ctrl+Z", undo);
+    */
+}
+
+void Application::ExecuteCommand(std::shared_ptr<Command> c)
+{
+    if (c->Execute())
+        m_command_history->push(c);
+}
+
+void Application::Undo()
+{
+    auto c = m_command_history->pop();
+    if (c != nullptr)
+        c->Undo();
+}
 
 
