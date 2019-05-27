@@ -11,6 +11,22 @@ public:
         , description(description)
     {
     }
+    int GetComplexity() const
+    {
+        return complexity;
+    }
+    const char* GetDescription() const
+    {
+        return description;
+    }
 };
 
+class Policeman
+{
+protected:
+    int deduction;
+    Policeman* next;
+    virtual void investigation(const char* description) {};
+public:
+};
 
