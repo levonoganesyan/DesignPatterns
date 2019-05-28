@@ -28,5 +28,15 @@ protected:
     Policeman* next;
     virtual void investigation(const char* description) {};
 public:
+    Policeman(int deduction)
+        : deduction(deduction)
+    {}
+
+    virtual ~Policeman() 
+    {
+        if (next)
+            delete next;
+    }
+
 };
 
