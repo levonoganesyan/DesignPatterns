@@ -38,5 +38,19 @@ public:
             delete next;
     }
 
+    Policeman* SetNext(Policeman* p)
+    {
+        next = p;
+        return next;
+    }
+
+    void investigate(CriminalAction* crime)
+    {
+        if (deduction >= crime->GetComplexity())
+        {
+            investigation(crime->GetDescription());
+        }
+    }
+
 };
 
