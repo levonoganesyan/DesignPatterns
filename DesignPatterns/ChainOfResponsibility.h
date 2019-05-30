@@ -1,5 +1,5 @@
 #pragma once
-
+#include<iostream>
 
 class CriminalAction
 {
@@ -50,7 +50,30 @@ public:
         {
             investigation(crime->GetDescription());
         }
+        else
+        {
+            if (next)
+            {
+                next->investigate(crime);
+            }
+            else
+            {
+                std::cout << "No one can investigate this." << std::endl;
+            }
+        }
     }
+};
 
+class PolicemanA : public Policeman
+{
+    void investigation(const char * desc)
+    {
+        std::cout << "PolicemanA in investigating crime " << desc << std::endl;
+    }
+public:
+    PolicemanA(int deduction)
+        : Policeman(deduction)
+    {
+    }
 };
 
