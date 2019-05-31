@@ -77,3 +77,29 @@ public:
     }
 };
 
+class PolicemanB : public Policeman
+{
+    void investigation(const char * desc)
+    {
+        std::cout << "PolicemanB in investigating crime " << desc << std::endl;
+    }
+public:
+    PolicemanB(int deduction)
+        : Policeman(deduction)
+    {
+    }
+};
+
+class PolicemanC : public Policeman
+{
+    void investigation(const char * desc)
+    {
+        std::cout << "PolicemanC in investigating crime " << desc << std::endl;
+    }
+public:
+    PolicemanC(int deduction)
+        : Policeman(deduction)
+    {
+    }
+};
+
