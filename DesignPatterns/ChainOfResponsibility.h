@@ -103,3 +103,16 @@ public:
     }
 };
 
+
+void Test()
+{
+    Policeman* p = new PolicemanA(3);
+    p->SetNext(new PolicemanB(5))->SetNext(new PolicemanC(7));
+
+    p->investigate(new CriminalAction(4, "1"));
+    p->investigate(new CriminalAction(3, "2"));
+    p->investigate(new CriminalAction(6, "3"));
+    p->investigate(new CriminalAction(10, "4"));
+
+}
+
