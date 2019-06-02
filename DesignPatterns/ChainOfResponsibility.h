@@ -30,6 +30,7 @@ protected:
 public:
     Policeman(int deduction)
         : deduction(deduction)
+        , next(nullptr)
     {}
 
     virtual ~Policeman() 
