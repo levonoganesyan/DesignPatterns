@@ -6,17 +6,24 @@ class StateContext;
 
 class State
 {
-    virtual std::string GetName() = 0;
-    virtual void freeze(StateContext*) = 0;
-    virtual void heat(StateContext*) = 0;
-};
-
-class SolidState
-{
-private:
     std::string name;
 public:
-    SolidState() : name("solid") {}
+    State(const std::string& name)
+        : name(name) {}
+    std::string GetName()
+    {
+        return name;
+    }
+    virtual void Freeze(StateContext*) = 0;
+    virtual void Heat(StateContext*) = 0;
+};
+
+class SolidState : public State
+{
+public:
+    SolidState() : State("solid") {}
+    virtual void Freeze(StateContext* state);
+    virtual void Heat(StateContext*) = 0;
 };
 
 
