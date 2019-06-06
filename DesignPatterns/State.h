@@ -4,11 +4,15 @@
 #include<iostream>
 
 class State;
+class SolidState;
+class LiquidState;
+class GasState;
 
 class StateContext
 {
 private:
     State* state;
+public:
     StateContext(State* state)
         : state(state) {}
 
@@ -46,7 +50,7 @@ public:
     }
     virtual void Heat(StateContext* state)
     {
-        state.set
+        state->SetState(new LiquidState());
     }
 };
 
