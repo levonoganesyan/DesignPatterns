@@ -43,17 +43,34 @@ public:
 class SolidState : public State
 {
 public:
-    SolidState() : State("solid") {}
-    virtual void Freeze(StateContext* state)
-    {
-        std::cout << "Nothing happened" << std::endl;
-    }
-    virtual void Heat(StateContext* state)
-    {
-        state->SetState(new LiquidState());
-    }
+    SolidState() : State("Solid") {}
+    virtual void Freeze(StateContext* state);
+    virtual void Heat(StateContext* state);
+};
+class LiquidState : public State
+{
+public:
+    LiquidState() : State("Liquid") {}
+    virtual void Freeze(StateContext* state);
+    virtual void Heat(StateContext* state);
+};
+class GasState : public State
+{
+public:
+    GasState() : State("Gas") {}
+    virtual void Freeze(StateContext* state);
+    virtual void Heat(StateContext* state);
 };
 
+void SolidState::Freeze(StateContext* state)
+{
+    std::cout << "Nothing happened";
+}
+
+void SolidState::Heat(StateContext* state)
+{
+    state->SetState(new LiquidState());
+}
 
 
 
