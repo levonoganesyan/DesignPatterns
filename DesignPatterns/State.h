@@ -40,6 +40,22 @@ public:
     }
 };
 
+
+class State
+{
+    std::string name;
+public:
+    State(const std::string& name)
+        : name(name) {}
+    std::string GetName()
+    {
+        return name;
+    }
+    virtual void Freeze(StateContext*) = 0;
+    virtual void Heat(StateContext*) = 0;
+};
+
+
 class SolidState : public State
 {
 public:
@@ -66,26 +82,27 @@ void SolidState::Freeze(StateContext* state)
 {
     std::cout << "Nothing happened";
 }
-
 void SolidState::Heat(StateContext* state)
 {
     state->SetState(new LiquidState());
 }
 
-
-
-class State
+void LiquidState::Freeze(StateContext* state)
 {
-    std::string name;
-public:
-    State(const std::string& name)
-        : name(name) {}
-    std::string GetName()
-    {
-        return name;
-    }
-    virtual void Freeze(StateContext*) = 0;
-    virtual void Heat(StateContext*) = 0;
-};
+    state->SetState(new SolidState());
+}
+void LiquidState::Heat(StateContext* state)
+{
+    state->SetState(new GasState());
+}
+
+void GasState::Freeze(StateContext* state)
+{
+    state->SetState(new LiquidState());
+}
+void GasState::Heat(StateContext* state)
+{
+    std::cout << "Nothing happened";
+}
 
 
