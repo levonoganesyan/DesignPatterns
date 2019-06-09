@@ -18,15 +18,19 @@ public:
 
     void Freeze()
     {
+        std::cout << "Freezing " << state->GetName() << "...";
         state->Freeze(this);
     }
     void Heat()
     {
+        std::cout << "Heating " << state->GetName() << "...";
         state->Heat(this);
     }
 
     void SetState(State* s)
     {
+        std::cout << "Chaging state from " << state->GetName()
+                  << "to" << s->GetName << "...";
         state = s;
     }    
     State* GetState()
@@ -105,4 +109,16 @@ void GasState::Heat(StateContext* state)
     std::cout << "Nothing happened";
 }
 
+void Test()
+{
+    StateContext* sc = new StateContext(new SolidState());
+    sc->Heat();
+    sc->Heat();
+    sc->Heat();
+    sc->Freeze();
+    sc->Freeze();
+    sc->Freeze();
+
+
+}
 
