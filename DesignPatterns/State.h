@@ -4,45 +4,10 @@
 #include<iostream>
 
 class State;
+class StateContext;
 class SolidState;
 class LiquidState;
 class GasState;
-
-class StateContext
-{
-private:
-    State* state;
-public:
-    StateContext(State* state)
-        : state(state) {}
-
-    void Freeze()
-    {
-        std::cout << "Freezing " << state->GetName() << "...";
-        state->Freeze(this);
-    }
-    void Heat()
-    {
-        std::cout << "Heating " << state->GetName() << "...";
-        state->Heat(this);
-    }
-
-    void SetState(State* s)
-    {
-        std::cout << "Chaging state from " << state->GetName()
-                  << "to" << s->GetName << "...";
-        state = s;
-    }    
-    State* GetState()
-    {
-        return state;
-    }
-
-    ~StateContext()
-    {
-        delete state;
-    }
-};
 
 
 class State
@@ -58,6 +23,43 @@ public:
     virtual void Freeze(StateContext*) = 0;
     virtual void Heat(StateContext*) = 0;
 };
+
+class StateContext
+{
+private:
+    State* state;
+public:
+    StateContext(State* state)
+        : state(state) {}
+
+    void Freeze()
+    {
+        std::cout << "Freezing " << state->GetName() << "..." << std::endl;
+        state->Freeze(this);
+    }
+    void Heat()
+    {
+        std::cout << "Heating " << state->GetName() << "..." << std::endl;
+        state->Heat(this);
+    }
+
+    void SetState(State* s)
+    {
+        std::cout << "Chaging state from " << state->GetName()
+                  << " to " << s->GetName() << "..." << std::endl;
+        state = s;
+    }    
+    State* GetState()
+    {
+        return state;
+    }
+
+    ~StateContext()
+    {
+        delete state;
+    }
+};
+
 
 
 class SolidState : public State
@@ -84,7 +86,7 @@ public:
 
 void SolidState::Freeze(StateContext* state)
 {
-    std::cout << "Nothing happened";
+    std::cout << "Nothing happens" << std::endl;
 }
 void SolidState::Heat(StateContext* state)
 {
@@ -106,7 +108,7 @@ void GasState::Freeze(StateContext* state)
 }
 void GasState::Heat(StateContext* state)
 {
-    std::cout << "Nothing happened";
+    std::cout << "Nothing happens" << std::endl;
 }
 
 void Test()
