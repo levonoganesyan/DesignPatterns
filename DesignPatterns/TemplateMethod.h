@@ -26,3 +26,16 @@ public:
     }
 };
 
+
+class Monopoly
+{
+    virtual void InitializeGame()
+    {
+        std::cout << "Initializing Monopoly" << std::endl;
+    }
+    virtual bool EndOfGame() = 0;
+    virtual void MakeMove(int player_id) = 0;
+    virtual void PrintWinner() = 0;
+};
+
+
