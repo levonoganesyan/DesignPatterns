@@ -20,11 +20,11 @@ public:
         int player_id = -1;
         while (!EndOfGame())
         {
-            MakeMove(player_id);
             player_id = (player_id + 1) % players_count;
+            MakeMove(player_id);
         }
 
-        PrintWinner();
+        PrintWinner(player_id);
     }
 };
 
@@ -37,7 +37,7 @@ class Monopoly : public GameObject
     }
     virtual bool EndOfGame()
     {
-        return rand() % 10;
+        return !(rand() % 10);
     }
     virtual void MakeMove(int player_id)
     {
@@ -58,7 +58,7 @@ class Chess : public GameObject
     }
     virtual bool EndOfGame()
     {
-        return rand() % 10;
+        return !(rand() % 10);
     }
     virtual void MakeMove(int player_id)
     {
