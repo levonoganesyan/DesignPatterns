@@ -29,7 +29,7 @@ class StateContext
 private:
     State* state;
 public:
-    StateContext(State* state)
+    StateContext(State* state = nullptr)
         : state(state) {}
 
     void Freeze()
@@ -47,6 +47,7 @@ public:
     {
         std::cout << "Chaging state from " << state->GetName()
                   << " to " << s->GetName() << "..." << std::endl;
+        delete state;
         state = s;
     }    
     State* GetState()
@@ -120,7 +121,6 @@ void Test()
     sc->Freeze();
     sc->Freeze();
     sc->Freeze();
-
-
+    delete sc;
 }
 

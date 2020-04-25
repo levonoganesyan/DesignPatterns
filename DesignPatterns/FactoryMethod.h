@@ -15,7 +15,7 @@ public:
     }
 };
 
-class Trunk : public Transport
+class Truck : public Transport
 {
 public:
     virtual void Delivery()
@@ -36,8 +36,8 @@ class RoadLogistic : public Logistic
 public:
     virtual void Send()
     {
-        Ship* s = new Ship();
-        s->Delivery();
+        Truck * t = new Truck();
+        t->Delivery();
     }
 };
 
@@ -46,8 +46,8 @@ class SeaLogistic : public Logistic
 public:
     virtual void Send()
     {
-        Trunk* t = new Trunk();
-        t->Delivery();
+        Ship* s = new Ship();
+        s->Delivery();
     }
 };
 
